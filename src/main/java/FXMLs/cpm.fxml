@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="598.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group5.Controllers.CpmController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="113.0" layoutY="86.0" prefHeight="371.5" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="573.0" prefWidth="710.0">
+                     <children>
+                        <Label fx:id="h6" alignment="CENTER" prefHeight="44.0" prefWidth="713.0" text="CPM" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <LineChart fx:id="lineChart">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </LineChart>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="710.0">
+                                 <children>
+                                    <Label fx:id="b2" prefHeight="26.0" prefWidth="51.0" text="From: ">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="datePickerFrom">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipFrom" text="Choose the start date" />
+                                       </tooltip></DatePicker>
+                                    <TextField fx:id="timeFrom" prefHeight="25.0" prefWidth="93.0" promptText="Time (hh:mm)">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipTimeFrom" text="Choose the start time" />
+                                       </tooltip>
+                                    </TextField>
+                                    <Label fx:id="b3" prefHeight="26.0" prefWidth="33.0" text="To:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <DatePicker fx:id="datePickerTo">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipTo" text="Choose the end date" />
+                                       </tooltip></DatePicker>
+                                    <TextField fx:id="timeTo" prefHeight="25.0" prefWidth="93.0" promptText="Time (hh:mm)">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipTimeTo" text="Choose the end time" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="46.0" prefWidth="710.0">
+                                 <children>
+                                    <Label fx:id="b4" text="Graph Type: ">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="granularityDrop" prefHeight="25.0" prefWidth="222.0">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipGranularity" text="Changes the time interval for the chart" />
+                                       </tooltip></ChoiceBox>
+                                    <Button fx:id="updateBtn" mnemonicParsing="false" onAction="#showGraph" prefHeight="31.0" prefWidth="94.0" text="Update">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipUpdate" text="Update the chart after making changes" />
+                                       </tooltip>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="clearBtn" mnemonicParsing="false" onAction="#clear" prefHeight="31.0" prefWidth="94.0" text="Clear">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipClear" text="Clear the chart" />
+                                       </tooltip>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="715.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <children>
+                                    <Button fx:id="compareBtn" mnemonicParsing="false" onAction="#compare" prefHeight="31.0" prefWidth="94.0" text="Compare">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipCompare" text="Compare to another chart " />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="filterBtn" mnemonicParsing="false" onAction="#showFilterSelect" prefHeight="31.0" prefWidth="94.0" text="Filter">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipFilter" text="Filter the chart data" />
+                                       </tooltip>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveChart" prefHeight="31.0" prefWidth="94.0" text="Save">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipSave" text="Save the chart summary" />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="printBtn" mnemonicParsing="false" onAction="#print" prefHeight="31.0" prefWidth="94.0" text="Print">
+                                       <tooltip>
+                                          <Tooltip fx:id="tooltipPrint" text="Print the chart summary" />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="573.0" prefWidth="2.0" style="-fx-background-color: #000;" />
+                  <VBox prefHeight="573.0" prefWidth="175.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="178.0" prefWidth="234.0" style="-fx-background-color: #bbbbbb; -fx-border-color: #000; -fx-border-width: 0 0 2 0;">
+                           <children>
+                              <Label fx:id="h7" alignment="CENTER" prefHeight="13.0" prefWidth="162.0" text="Description" textAlignment="CENTER" underline="true">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="b1" prefHeight="117.0" prefWidth="167.0" text="CPM (Cost Per thousand Impressions) the average amount of money spent on an advertising campaign for every 1000 impressoins." textAlignment="CENTER" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="421.0" prefWidth="175.0" style="-fx-background-color: #bbbbbb;">
+                           <children>
+                              <Label fx:id="h8" alignment="CENTER" prefHeight="1.0" prefWidth="161.0" text="Stats" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lastDay" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Last day: 50">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lastWeek" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Last week:  100">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lastMonth" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Last month: 200">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+<!--                              <Label fx:id="lastYear" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Last year: 200">-->
+<!--                                 <VBox.margin>-->
+<!--                                    <Insets top="15.0" />-->
+<!--                                 </VBox.margin>-->
+<!--                                 <font>-->
+<!--                                    <Font name="System Bold" size="15.0" />-->
+<!--                                 </font>-->
+<!--                              </Label>-->
+                              <Label alignment="CENTER" prefHeight="4.0" prefWidth="161.0">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="286.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group5.Controllers.DataImportController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="257.0" prefWidth="454.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox layoutX="131.0" layoutY="20.0" prefHeight="286.0" prefWidth="476.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="476.0" text="Data Import" textAlignment="CENTER" underline="true">
+                            <font>
+                                <Font name="SansSerif Regular" size="30.0" />
+                            </font>
+                        </Label>
+                        <Line endX="667.301513671875" endY="0.5855257511138916" startX="213.0085906982422" startY="0.5857864618301392">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </Line>
+                        <HBox alignment="CENTER" prefHeight="66.0" prefWidth="476.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="135.0" text="Impression Log: ">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="impressionBtn" mnemonicParsing="false" onAction="#chooseImpression" prefHeight="27.0" prefWidth="122.0" text="Click to choose file" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="63.0" prefWidth="476.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="135.0" text="Click Log: ">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" onAction="#chooseClick" prefHeight="27.0" prefWidth="122.0" text="Click to choose file" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="476.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="33.0" prefWidth="135.0" text="Server Log: " textAlignment="RIGHT">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" onAction="#chooseServer" prefHeight="27.0" prefWidth="122.0" text="Click to choose file" />
+                            </children>
+                        </HBox>
+                        <Line endX="1269.878662109375" endY="1.2923942804336548" startX="817.5858154296875" startY="0.79167640209198">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </Line>
+                        <HBox alignment="CENTER" prefHeight="49.0" prefWidth="476.0">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" text="Submit" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

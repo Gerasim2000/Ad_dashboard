@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group5.GUIController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About Dashboard" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="113.0" layoutY="86.0" prefHeight="371.5" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="372.0" prefWidth="175.0" style="-fx-background-color: #c2c0c0#c2c0c0;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="13.0" prefWidth="162.0" text="Description" textAlignment="CENTER" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextArea editable="false" focusTraversable="false" prefHeight="81.0" prefWidth="165.0" text="The average number of bounces per click." wrapText="true">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="372.0" prefWidth="1.0" style="-fx-background-color: #000;" />
+                  <VBox prefHeight="372.0" prefWidth="300.0">
+                     <children>
+                        <Label fx:id="statsName" alignment="CENTER" prefHeight="44.0" prefWidth="300.0" text="Bounce Rate" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="SansSerif Regular" size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AreaChart prefHeight="246.0" prefWidth="312.0" style="-fx-border-color: #000; -fx-border-width: 0;">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                        <HBox alignment="CENTER" prefHeight="73.0" prefWidth="265.0">
+                           <children>
+                              <Button fx:id="byHour" mnemonicParsing="false" prefHeight="10.0" prefWidth="80.0" text="Hour">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip fx:id="tooltipHour" text="Changes the time granularity for the graph" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="byDay1" mnemonicParsing="false" prefHeight="10.0" prefWidth="80.0" text="Day">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip fx:id="tooltipDay" text="Changes the time granularity for the graph" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="byWeek" mnemonicParsing="false" prefHeight="10.0" prefWidth="80.0" text="Week">
+                                 <HBox.margin>
+                                    <Insets right="15.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip fx:id="tooltipWeek" text="Changes the time granularity for the graph" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="byMonth1" mnemonicParsing="false" prefHeight="10.0" prefWidth="80.0" text="Month">
+                                 <HBox.margin>
+                                    <Insets right="15.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip fx:id="tooltipMonth" text="Changes the time granularity for the graph" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="372.0" prefWidth="1.0" style="-fx-background-color: #000;" />
+                  <VBox alignment="CENTER" prefHeight="372.0" prefWidth="163.0" style="-fx-background-color: #c2c0c0#c2c0c0;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="1.0" prefWidth="161.0" text="Stats" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="SansSerif Regular" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="total" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Total Bounce Rate: 500">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lastDay" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Bounce Rate last day: 50">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lastWeek" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Bounce Rate last week:  100">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lastMonth" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Bounce Rate last month: 200">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lastYear" alignment="CENTER" prefHeight="17.0" prefWidth="162.0" text="Bounce Rate last year: 200">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="4.0" prefWidth="161.0">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

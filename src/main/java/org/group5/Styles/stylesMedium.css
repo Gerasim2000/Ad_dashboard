@@ -1,0 +1,97 @@
+.label{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+#h1, #h2, #h3, #h4, #h5 {
+    -fx-font-size: 31;
+    -fx-font-weight: bold;
+}
+#h6 {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+#h7, #h8 {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#h9 {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+#b1 {
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+#b2, #b3, #b4 {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+#total, #lastDay, #lastWeek, #lastMonth {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+.menu {
+    -fx-font-size: 14;
+}
+
+.menu-bar {
+    -fx-font-size: 14;
+}
+
+.menu-bar .label {
+    -fx-font-size: 14;
+}
+
+.menu-bar .menu-button {
+    -fx-font-size: 14;
+}
+
+.menu-item {
+    -fx-font-size: 14;
+}
+
+.menu-item .label {
+    -fx-font-size: 14;
+}
+
+.context-menu {
+    -fx-font-size: 14;
+}
+
+.choice-box {
+    -fx-font-size: 14;
+}
+.choice-box-popup .list-view{
+    -fx-font-size: 14;
+}
+
+.choice-box-popup .list-view .list-cell{
+    -fx-font-size: 14;
+}
+
+.choice-box .label {
+    -fx-font-size: 14;
+}
+
+.choice-box .button {
+    -fx-font-size: 14;
+}
+
+#granularityDrop {
+    -fx-font-size: 14;
+}
+
+#helpDescription {
+    -fx-font-size: 15;
+}

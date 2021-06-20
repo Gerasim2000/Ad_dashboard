@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="616.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group5.GUIController">
+   <children>
+      <MenuBar VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="fileOpen" mnemonicParsing="false" onAction="#fileOpen" text="Open…" />
+                  <MenuItem mnemonicParsing="false" text="Preferences…" />
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Redo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cut" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane maxWidth="-1.0" prefHeight="536.0" prefWidth="861.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox layoutX="-14.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="600.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="294.0" prefWidth="350.0" style="-fx-border-color: #000; -fx-border-width: 1;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Impressions" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                              <BarChart prefHeight="200.0" prefWidth="298.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                                 <VBox.margin>
+                                    <Insets left="50.0" right="50.0" top="5.0" />
+                                 </VBox.margin>
+                              </BarChart>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="346.0">
+                                 <children>
+                                    <Label fx:id="totalImpressions" prefHeight="17.0" prefWidth="146.0" text="Main info here">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="impressionsBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showImpressions" prefHeight="10.0" prefWidth="62.0" text="More" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="294.0" prefWidth="350.0" style="-fx-border-color: #000; -fx-border-width: 1;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Uniques" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                              <BarChart prefHeight="200.0" prefWidth="298.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                                 <VBox.margin>
+                                    <Insets left="50.0" right="50.0" top="5.0" />
+                                 </VBox.margin>
+                              </BarChart>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="350.0">
+                                 <children>
+                                    <Label fx:id="totalUniques" prefHeight="17.0" prefWidth="146.0" text="Main info here">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="uniquesBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showUniques" prefHeight="10.0" prefWidth="62.0" text="More" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="600.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="294.0" prefWidth="350.0" style="-fx-border-color: #000; -fx-border-width: 1;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Clicks" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                              <BarChart prefHeight="200.0" prefWidth="298.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                                 <VBox.margin>
+                                    <Insets left="50.0" right="50.0" top="5.0" />
+                                 </VBox.margin>
+                              </BarChart>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="350.0">
+                                 <children>
+                                    <Label fx:id="totalClicks" prefHeight="17.0" prefWidth="146.0" text="Main info here">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="clicksBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showClicks" prefHeight="10.0" prefWidth="62.0" text="More" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="294.0" prefWidth="350.0" style="-fx-border-color: #000; -fx-border-width: 1;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Bounces" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="20.0" />
+                                 </font>
+                              </Label>
+                              <BarChart prefHeight="200.0" prefWidth="298.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                                 <VBox.margin>
+                                    <Insets left="50.0" right="50.0" top="5.0" />
+                                 </VBox.margin>
+                              </BarChart>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="350.0">
+                                 <children>
+                                    <Label fx:id="totalBounces" prefHeight="17.0" prefWidth="146.0" text="Main info here">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="bouncesBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showBounces" prefHeight="10.0" prefWidth="62.0" text="More" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="600.0" prefWidth="300.0" style="-fx-border-color: #000; -fx-border-width: 2; -fx-background-color: #c2c0c0#c2c0c0 #c2c0c0#c2c0c0;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="17.0" prefWidth="299.0" text="DASHBOARD" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="SansSerif Regular" size="36.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="conversionsBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showConversions" prefHeight="10.0" prefWidth="100.0" text="Conversions" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="totalCostBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showTotalCost" prefHeight="10.0" prefWidth="100.0" text="Total Cost" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="ctrBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showCtr" prefHeight="10.0" prefWidth="100.0" text="CTR" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="cpaBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showCpa" prefHeight="10.0" prefWidth="100.0" text="CPA" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="cpcBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showCpc" prefHeight="10.0" prefWidth="100.0" text="CPC" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="cpmBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showCpm" prefHeight="10.0" prefWidth="100.0" text="CPM" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="bounceRateBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showBounceRate" prefHeight="10.0" prefWidth="100.0" text="Bounce Rate" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="300.0">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Extra" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

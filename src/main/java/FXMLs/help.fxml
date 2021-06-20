@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group5.Controllers.HelpController">
+   <children>
+      <Label fx:id="h9" alignment="CENTER" prefHeight="64.0" prefWidth="380.0" text="About DashBoard" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="349.0" prefWidth="420.0" style="-fx-border-color: #000; -fx-border-width: 2 0 2 0;">
+         <children>
+            <Label fx:id="helpDescription" alignment="CENTER" contentDisplay="CENTER" prefHeight="338.0" prefWidth="348.0" text="Welcome to our Ad Auction Dashboard! Here, you can see a number of different statistics for each of our 12 metrics calculated from your ad campaign. Import the data from the ad campaign by selecting “File” and “Open” from the tab at the top to get started. You can view each metric in more detail by navigating to their respective window. Change date ranges and filter the data using our easy-to-use toggles and buttons to customise the graphs in order to analyse your campaign further." textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="403.0">
+         <children>
+            <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#closeWindow" prefHeight="24.0" prefWidth="67.0" text="Got it!" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
